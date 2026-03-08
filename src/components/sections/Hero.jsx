@@ -55,7 +55,6 @@ export default function Hero() {
         const handleMouse = (e) => {
             if (!heroRef.current) return
 
-            ʼ
             const rect = heroRef.current.getBoundingClientRect()
             mouseX.set(e.clientX - rect.left)
             mouseY.set(e.clientY - rect.top)
