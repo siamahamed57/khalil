@@ -1,0 +1,208 @@
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 28px;
+}
+
+@media (min-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr 1.4fr;
+    }
+}
+
+.radarCard {
+    padding: 28px;
+}
+
+.chartTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.barsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Bottom Category Panel */
+.bottomPanelWrapper {
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.bottomCategoryPanel {
+    position: relative;
+    padding: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    pointer-events: auto;
+}
+
+.categoryPanelGlow {
+    position: absolute;
+    inset: -1px;
+    border-radius: 100px;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2), var(--accent-1));
+    opacity: 0.15;
+    z-index: -1;
+    filter: blur(10px);
+    animation: flowBg 4s ease infinite;
+    background-size: 200% 200%;
+}
+
+.categoryContainer {
+    display: flex;
+    gap: 8px;
+    position: relative;
+}
+
+.categoryBtn {
+    position: relative;
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.categoryBtn:hover {
+    color: var(--text-primary);
+}
+
+.categoryBtnActive {
+    color: #fff;
+}
+
+.categoryLabel {
+    position: relative;
+    z-index: 2;
+}
+
+.categoryBtnBg {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    border-radius: 100px;
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+@keyframes flowBg {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.skillList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.skillItem {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skillHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skillName {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.skillLevel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.progressBg {
+    height: 6px;
+    background: var(--border-color);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.barChartCard {
+    padding: 28px;
+}
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .radarCard {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 640px) {
+    .bottomPanelWrapper {
+        bottom: 20px;
+    }
+
+    .bottomCategoryPanel {
+        padding: 6px;
+        max-width: 95vw;
+        overflow-x: auto;
+        /* Hide scrollbar for clean look but allow touch scroll */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .bottomCategoryPanel::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari and Opera */
+    }
+
+    .categoryBtn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+}

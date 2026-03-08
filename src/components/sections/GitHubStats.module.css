@@ -1,0 +1,121 @@
+.sectionBlock {
+    margin-bottom: 48px;
+}
+
+.blockTitle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+}
+
+/* Stat Cards */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+    .statsGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.statCard {
+    padding: 24px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+}
+
+.statIcon {
+    font-size: 1.4rem;
+}
+
+.statValue {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.statLabel {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* GitHub images */
+.imgCard {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .imgCard {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* CP Cards */
+.cpGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.cpCard {
+    padding: 24px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cpHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cpIcon {
+    display: flex;
+}
+
+.cpPlatform {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.cpStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.cpStat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    text-align: center;
+}
+
+.cpVal {
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.cpLabel {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}

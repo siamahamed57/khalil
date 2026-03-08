@@ -1,0 +1,219 @@
+.pathwayContainer {
+    position: relative;
+    max-width: 1000px;
+    margin: 60px auto 0;
+    padding-bottom: 60px;
+}
+
+.mainPath {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.pathFill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--accent-1), var(--accent-2), var(--accent-1));
+    box-shadow: 0 0 15px var(--accent-1);
+    border-radius: 999px;
+}
+
+.milestone {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    margin-bottom: 60px;
+    padding-right: 45px;
+}
+
+.milestone.right {
+    margin-left: 50%;
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 45px;
+}
+
+.milestoneMarker {
+    position: absolute;
+    top: 20px;
+    right: -7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.milestone.right .milestoneMarker {
+    right: auto;
+    left: -7px;
+}
+
+.milestoneDot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--bg-card);
+}
+
+.milestoneYear {
+    position: absolute;
+    top: -25px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.card {
+    width: 100%;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cardHeader {
+    margin-bottom: 16px;
+}
+
+.roleMeta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.type {
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid;
+}
+
+.period {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.role {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.company {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.companyName {
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.separator {
+    color: var(--text-muted);
+}
+
+.location {
+    color: var(--text-muted);
+}
+
+.description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.achievement {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+}
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.techChip {
+    padding: 3px 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+@media (max-width: 768px) {
+    .mainPath {
+        left: 20px;
+        transform: none;
+    }
+
+    .milestone {
+        width: 100%;
+        padding-left: 45px;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+
+    .milestone.right {
+        margin-left: 0;
+        padding-left: 45px;
+    }
+
+    .milestoneMarker {
+        left: 13px;
+        right: auto;
+    }
+
+    .milestone.right .milestoneMarker {
+        left: 13px;
+    }
+
+    .milestoneYear {
+        top: -20px;
+        left: 25px;
+    }
+}

@@ -1,0 +1,10 @@
+/* App-level overrides (mostly empty — design system in index.css) */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
