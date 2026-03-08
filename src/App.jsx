@@ -3,9 +3,12 @@ import { Routes, Route } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import Toaster from './components/ui/Toaster'
 import FloatingContact from './components/ui/FloatingContact'
+import ScrollProgress from './components/ui/ScrollProgress'
+import WelcomeLoader from './components/ui/WelcomeLoader'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import './App.css'
+import { useState } from 'react'
 
 const Hero = lazy(() => import('./components/sections/Hero'))
 const About = lazy(() => import('./components/sections/About'))
@@ -46,19 +49,36 @@ function HomePage() {
 }
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <>
-      <Navbar />
-      <main>
-        <AnimatePresence mode="wait">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-          </Routes>
-        </AnimatePresence>
-      </main>
-      <Footer />
-      <FloatingContact />
-      <Toaster />
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <WelcomeLoader key="loader" onLoadingComplete={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
+
+      {!isLoading && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <Navbar />
+          <main>
+            <AnimatePresence mode="wait">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+              </Routes>
+            </AnimatePresence>
+          </main>
+          <Footer />
+          <ScrollProgress />
+          <FloatingContact />
+          <Toaster />
+        </motion.div>
+      )}
     </>
   )
 }
