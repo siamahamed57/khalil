@@ -6,7 +6,7 @@ import { portfolioData } from '../../data/portfolioData'
 import styles from './Projects.module.css'
 
 const { projects } = portfolioData
-const CATEGORIES = ['All', 'Full-Stack', 'Frontend', 'Backend', 'AI/ML']
+const CATEGORIES = ['All', 'Paid', 'Personal', 'Full-Stack', 'Frontend', 'Backend', 'AI/ML']
 
 export default function Projects() {
     const [activeFilter, setActiveFilter] = useState('All')

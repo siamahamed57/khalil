@@ -51,8 +51,6 @@ export default function GitHubStats() {
                         <StatCard icon={<FiActivity size={22} />} label="Contributions" value={`${stats.github.contributions}+`} color="#10b981" delay={0.35} inView={inView} />
                         <StatCard icon={<FiGitBranch size={22} />} label="Pull Requests" value={stats.github.pullRequests} color="#a855f7" delay={0.4} inView={inView} />
                     </div>
-
-
                 </motion.div>
 
                 {/* Competitive Programming */}
