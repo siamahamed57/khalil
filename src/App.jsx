@@ -20,10 +20,21 @@ const Articles = lazy(() => import('./components/sections/Articles'))
 const GitHubStats = lazy(() => import('./components/sections/GitHubStats'))
 const Contact = lazy(() => import('./components/sections/Contact'))
 
+const PageLoader = () => (
+  <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-primary)' }}>
+    <motion.div
+      animate={{ opacity: [0.3, 1, 0.3] }}
+      transition={{ duration: 1.5, repeat: Infinity }}
+      style={{ fontFamily: 'var(--font-mono)', color: 'var(--accent-1)', fontSize: '1rem' }}
+    >
+      Loading...
+    </motion.div>
+  </div>
+)
 
 function HomePage() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<PageLoader />}>
       <Hero />
       <About />
       <Skills />
